@@ -1,20 +1,29 @@
 import { Home } from "lucide-react";
 import { Toaster } from "react-hot-toast";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Course from "./pages/Course";
 import CourseDetails from "./pages/CourseDetails";
 import CourseEditor from "./pages/CourseEditor";
 import CoursePlayer from "./pages/CoursePlayer";
 import InstructorPanel from "./pages/InstructorPanel";
 import MyLearning from "./pages/MyLearning";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
+  const location = useLocation();
+  const isPlayer = location.pathname.startsWith("/learn/");
+
   return (
-    <div>
+    <div
+      className={`flex flex-col bg-white font-urbanist ${isPlayer ? "h-screen overflow-hidden" : "min-h-screen"}`}
+    >
       <Toaster position="bottom-right" />
 
-      <p>Navbar</p>
-      <main>
+      <Navbar />
+      <main
+        className={`flex-1 ${isPlayer ? "h-screen overflow-hidden" : "min-h-screen"}`}
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Course />} />
@@ -27,7 +36,7 @@ const App = () => {
         </Routes>
       </main>
 
-      <p>Footer</p>
+      {!isPlayer && <Footer />}
     </div>
   );
 };
