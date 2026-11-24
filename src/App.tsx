@@ -9,6 +9,7 @@ import InstructorPanel from "./pages/InstructorPanel";
 import MyLearning from "./pages/MyLearning";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AuthModal from "./components/AuthModal";
 
 const App = () => {
   const location = useLocation();
@@ -20,6 +21,7 @@ const App = () => {
     >
       <Toaster position="bottom-right" />
 
+      <AuthModal />
       <Navbar />
       <main
         className={`flex-1 ${isPlayer ? "h-screen overflow-hidden" : "min-h-screen"}`}
