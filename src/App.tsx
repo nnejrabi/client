@@ -1,4 +1,3 @@
-import { Home } from "lucide-react";
 import { Toaster } from "react-hot-toast";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Course from "./pages/Course";
@@ -10,6 +9,7 @@ import MyLearning from "./pages/MyLearning";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AuthModal from "./components/AuthModal";
+import Home from "./pages/Home";
 
 const App = () => {
   const location = useLocation();
