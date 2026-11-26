@@ -1,6 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Course from "./pages/Course";
+import Courses from "./pages/Courses";
 import CourseDetails from "./pages/CourseDetails";
 import CourseEditor from "./pages/CourseEditor";
 import CoursePlayer from "./pages/CoursePlayer";
@@ -28,7 +28,7 @@ const App = () => {
       >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<Course />} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:id" element={<CourseDetails />} />
           <Route path="/learn/:id" element={<CoursePlayer />} />
           <Route path="/my-learning" element={<MyLearning />} />
